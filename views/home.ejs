@@ -3,12 +3,12 @@
 <h1>Hello!</h1>
 <p> <%= homeContent %> </p>
 
-<% homePosts.forEach(function(post){ %>
-  <% let heading = post.title; %>
-  <% let body = post.body.substring(0,100) + " ..."; %>
+<% homePosts.forEach(function(foundPosts){ %>
+  <% let heading = foundPosts.title; %>
+  <% let body = foundPosts.body.substr(0,100) + " ..."; %>
   <h1><%= heading  %></h1>
   <p><%= body %></p>
-  <a href="/posts/<%= heading %>">Read more</a>
+  <a href="/posts/<%=foundPosts._id%>">Read More</a>
 <% }); %>
 
 <%- include('partials/footer'); %>
